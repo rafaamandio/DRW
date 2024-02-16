@@ -4,35 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 id="title">Formulário de Pesquisa</h1>
     <p id="description">Preencha este formulário para te conhecermos melhor!</p>
+    <p id="description">Os itens marcados com * são Obrigatórios</p>
     <form action="post" id="survey-form">
         <fieldset>
-            <label id="name-label">* Nome:<input type="text" id="name" placeholder="Informe seu nome" required></label>
-            <label id="email-label">* Email:<input type="email" id="email" placeholder="Informe seu email" required></label>
-            <label id="number-label">* Idade:<input type="number" id="number" placeholder="Informe sua idade" min="13" max="120"></label>
+            <label id="name-label">Nome: *<input type="text" id="name" placeholder="Informe seu nome" required></label>
+            <label id="email-label">Email: *<input type="email" id="email" placeholder="Informe seu email" required></label>
+            <label id="number-label">Idade: *<input type="number" id="number" placeholder="Informe sua idade" min="13" max="120"></label>
         </fieldset>
         <fieldset>
-            <legend>* Tipo de Conta (Necessário)</legend>
-            <label for="personal-account"><input class="inline" type="radio" name="account-type" id="personal-account" checked> Pessoal</label>
-            <label for="business-account"><input class="inline" type="radio" name="account-type" id="business-account"> Empresarial</label>
+            <legend>Tipo de Conta *</legend>
+            <label for="personal-account"><input class="inline" value="personal" type="radio" name="account-type" id="personal-account" checked> Pessoal</label>
+            <label for="business-account"><input class="inline" value="business" type="radio" name="account-type" id="business-account"> Empresarial</label>
+        </fieldset>
+        <fieldset>
+            <legend>Selecione seu nível de conhecimento em Programação: *</legend>
+            <div>
+                <label for="iniciante">
+                    <input type="checkbox" class="inline" value="iniciante" id="iniciante" name="level" checked />
+                    Iniciante
+                </label>
+            </div>
+            <div>
+                <label for="intermediario">
+                    <input type="checkbox" class="inline" value="intermediario" id="intermediario" name="level" />
+                    Intermediário
+                </label>
+            </div>
+            <div>
+                <label for="avancado">
+                    <input type="checkbox" class="inline" value="avancado" id="avancado" name="level" />
+                    Avançado
+                </label>
+            </div>
         </fieldset>
         <fieldset>
             <label for="dropdown">
-                Como nos conheceu?
-                <input type="checkbox" name="" id="">
-                    <option value="0">(Escolha uma opção)</option>
-                    <option value="1">Instagram</option>
-                    <option value="2">Google</option>
-                    <option value="3">Amigos</option>
-                    <option value="4">Outros</option>
+                Como nos conheceu? *
+                <select name="dropdown" id="dropdown" required>
+                    <option value="opcao0">(Escolha uma opção)</option>
+                    <option value="opcao1">Instagram</option>
+                    <option value="opcao2">Google</option>
+                    <option value="opcao3">Amigos</option>
+                    <option value="opcao4">Outros</option>
                 </select>
             </label>
         </fieldset>
         <fieldset>
-            <label for="comment"><textarea name="comment" id="comment" cols="30" rows="10"></textarea></label>
+            <label for="comment">Nos conte um pouco da sua História:<textarea name="comment" id="comment" cols="30" rows="10"></textarea></label>
         </fieldset>
         <label for=""><input type="submit" id="submit" value="Enviar"></label>
     </form>
